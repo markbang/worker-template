@@ -24,3 +24,6 @@ Pass the `Env` as generics when instantiation `Hono`:
 // src/index.ts
 const app = new Hono<{ Bindings: Env }>();
 ```
+
+> [!note] If you already had a db
+> just run `npx drizzle-kit pull` then the schema auto gen
