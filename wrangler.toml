@@ -1,0 +1,21 @@
+
+name = "workertemplate"
+main = "src/index.ts"
+assets = { directory = "./public" }
+compatibility_date = "2025-03-01"
+compatibility_flags = ["nodejs_compat"]
+routes = [
+  { pattern = "somedomain", custom_domain = true }
+]
+
+[observability]
+enabled = true
+
+[[r2_buckets]]
+binding = "IMAGE_BUCKET"             # This is how you'll access it in your Worker code
+bucket_name = "buckername" 
+preview_bucket_name = "testbucketname"
+
+[vars]
+R2_DOMAIN = "some"
+TOKEN = "some"

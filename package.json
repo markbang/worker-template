@@ -1,0 +1,22 @@
+{
+	"name": "imgprocess",
+	"scripts": {
+		"dev": "wrangler dev",
+		"deploy": "wrangler deploy --minify",
+		"cf-typegen": "wrangler types --env-interface CloudflareBindings"
+	},
+	"dependencies": {
+		"dotenv": "^16.5.0",
+		"drizzle-orm": "^0.43.1",
+		"hono": "^4.7.10",
+		"pg": "^8.16.0"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20250523.0",
+		"@types/pg": "^8.15.2",
+		"drizzle-kit": "^0.31.1",
+		"postgres": "^3.4.7",
+		"tsx": "^4.19.4",
+		"wrangler": "^4.16.1"
+	}
+}
