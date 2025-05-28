@@ -27,3 +27,19 @@ const app = new Hono<{ Bindings: Env }>();
 
 > [!note] If you already had a db
 > just run `npx drizzle-kit pull` then the schema auto gen
+
+## BigInt Error
+
+`TypeError: Do not know how to serialize a BigInt` Use [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt#use_within_json)
+
+```javascript
+declare global {
+  interface BigInt {
+    toJSON(): string;
+  }
+}
+
+BigInt.prototype.toJSON = function () {
+  return this.toString();
+};
+```
